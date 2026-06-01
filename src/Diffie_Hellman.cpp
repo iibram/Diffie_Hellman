@@ -1,10 +1,12 @@
-// This is a personal academic project. Dear PVS-Studio, please check it.
-// PVS-Studio Static Code Analyzer for C, C++, C#, and Java: https://pvs-studio.com
-
 #include "Diffie_Hellman.h"
 
 
-
+/**
+ * @brief Custom constructor:
+ * @param base the base
+ * @param n the modulo element
+ * @param type the type of the "Square & Multiply" (SM) algorithm preferred by the user to use in this session
+ */
 Diffie_Hellman::Diffie_Hellman(uint64_t base, uint64_t n, SM_Type type) : n(n), type(type)
 {
 	if (n <= 1)
@@ -28,22 +30,48 @@ Diffie_Hellman::Diffie_Hellman(uint64_t base, uint64_t n, SM_Type type) : n(n), 
 	std::cout << "base is succesfully set!" << std::endl;
 }
 
+/**
+ * @brief Invokes the execution of the preselected SM algorithm for calculating the interchangable public key and returns the result
+ * @param p_key private key
+ * @return the public key to interchange with the partner
+ */
 uint64_t Diffie_Hellman::get_interchange_key(uint64_t p_key) const
 {
 	return base != 0 ? execute_sm(base, p_key, n) : INVALID_BASE;
 }
 
+/**
+ * @brief Invokes the execution of the preselected SM algorithm for calculating the common key and returns the result
+ * @param interchanged_key the interchanged key of the partner
+ * @param p_key private key
+ * @return
+ */
 uint64_t Diffie_Hellman::get_common_key(uint64_t interchanged_key, uint64_t p_key) const
 {
 	return base != 0 ? execute_sm(interchanged_key, p_key, n) : INVALID_BASE;
 }
 
+/**
+ * @brief Getter
+ * @return the base
+ */
 uint64_t Diffie_Hellman::get_base() const { return base; }
 
+/**
+ * @brief Prints the public key to the console
+ */
 void Diffie_Hellman::print() const { std::cout << public_key << std::endl; }
 
 
 // Eine private Hilfsmethode spart dir doppelten Code in den Key-Funktionen!
+
+/**
+ * @brief Helper function: selector of the type of the "Square & Multiply Algorithm" preferred by the user
+ * @param base the base
+ * @param exp the exponent
+ * @param n the modulo element
+ * @return the result of the preferred type of the "Square & Multiply Algorithm"
+ */
 uint64_t Diffie_Hellman::execute_sm(uint64_t base, uint64_t exp, uint64_t n) const
 {
 	switch (type)

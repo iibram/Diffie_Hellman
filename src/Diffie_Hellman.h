@@ -1,6 +1,3 @@
-// This is a personal academic project. Dear PVS-Studio, please check it.
-// PVS-Studio Static Code Analyzer for C, C++, C#, and Java: https://pvs-studio.com
-
 #pragma once
 
 #include "DivAlgs.h"
@@ -18,7 +15,8 @@ enum class SM_Type { L2R, R2L, NAIVE };
 const uint64_t INVALID_BASE = std::numeric_limits<uint64_t>::max();
 
 /**
- * This class is representing a C++ solution for "The Diffie-Hellman" key exchange
+ * This class represents a C++ implementation of the Diffie-Hellman key exchange procedure
+ *
  * @author Ibrahim Ibram
  */
 class Diffie_Hellman
