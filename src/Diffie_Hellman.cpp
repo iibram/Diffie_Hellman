@@ -62,11 +62,8 @@ uint64_t Diffie_Hellman::get_base() const { return base; }
  */
 void Diffie_Hellman::print() const { std::cout << public_key << std::endl; }
 
-
-// Eine private Hilfsmethode spart dir doppelten Code in den Key-Funktionen!
-
 /**
- * @brief Helper function: selector of the type of the "Square & Multiply Algorithm" preferred by the user
+ * @brief Helper function: selector of the type of the "Square & Multiply" (SM) algorithm preferred by the user to use in this session
  * @param base the base
  * @param exp the exponent
  * @param n the modulo element
@@ -76,9 +73,9 @@ uint64_t Diffie_Hellman::execute_sm(uint64_t base, uint64_t exp, uint64_t n) con
 {
 	switch (type)
 	{
-		case SM_Type::NAIVE:	return DivAlgs::square_n_multiply_NAIVE(base, exp, n);
-		case SM_Type::R2L:		return DivAlgs::square_n_multiply_R2L(base, exp, n);
+		case SM_Type::NAIVE:	return Square_n_Multiply::NAIVE(base, exp, n);
+		case SM_Type::R2L:		return Square_n_Multiply::R2L(base, exp, n);
 		case SM_Type::L2R:
-		default:				return DivAlgs::square_n_multiply_L2R(base, exp, n);
+		default:				return Square_n_Multiply::L2R(base, exp, n);
 	}
 }

@@ -1,23 +1,27 @@
 #pragma once
 
-#include "DivAlgs.h"
+#include "Square_n_Multiply.h"
 #include <iostream>
 #include <string>
 #include <format>
 #include <limits>
 
 
+
+constexpr uint64_t INVALID_BASE = std::numeric_limits<uint64_t>::max();
+
+
 /**
- * @brief Pre-Selection for the target "Square And Multiply" Algorithm type
+ * @brief Pre-Selection for the target "Square & Multiply" algorithm type
  */
 enum class SM_Type { L2R, R2L, NAIVE };
 
-const uint64_t INVALID_BASE = std::numeric_limits<uint64_t>::max();
 
 /**
- * This class represents a C++ implementation of the Diffie-Hellman key exchange procedure
+ * Implements the "Diffie-Hellman Key Exchange" procedure for demonstration purposes
  *
  * @author Ibrahim Ibram
+ * @date 2024/2025
  */
 class Diffie_Hellman
 {
