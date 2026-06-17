@@ -2,7 +2,7 @@
 
 
 /**
- * @brief Custom constructor:
+ * @brief Custom constructor: Evaluates the passed parameters and informs the user whats missing or is wrong.
  * @param base the base
  * @param n the modulo element
  * @param type the type of the "Square & Multiply" (SM) algorithm preferred by the user to use in this session
@@ -27,11 +27,11 @@ Diffie_Hellman::Diffie_Hellman(uint64_t base, uint64_t n, SM_Type type) : n(n), 
 	this->base = base;
 	public_key = std::format("({}, {})", base, n);
 
-	std::cout << "base is succesfully set!" << std::endl;
+	std::cout << "base is succesfully set!" << '\n';
 }
 
 /**
- * @brief Invokes the execution of the preselected SM algorithm for calculating the interchangable public key and returns the result
+ * @brief Invokes the execution of the preselected SM algorithm for calculating the interchangable public key and returns the result.
  * @param p_key private key
  * @return the public key to interchange with the partner
  */
@@ -41,7 +41,7 @@ uint64_t Diffie_Hellman::get_interchange_key(uint64_t p_key) const
 }
 
 /**
- * @brief Invokes the execution of the preselected SM algorithm for calculating the common key and returns the result
+ * @brief Invokes the execution of the preselected SM algorithm for calculating the common key and returns the result.
  * @param interchanged_key the interchanged key of the partner
  * @param p_key private key
  * @return
@@ -58,12 +58,12 @@ uint64_t Diffie_Hellman::get_common_key(uint64_t interchanged_key, uint64_t p_ke
 uint64_t Diffie_Hellman::get_base() const { return base; }
 
 /**
- * @brief Prints the public key to the console
+ * @brief Prints the public key to the console.
  */
-void Diffie_Hellman::print() const { std::cout << public_key << std::endl; }
+void Diffie_Hellman::print() const { std::cout << public_key << '\n'; }
 
 /**
- * @brief Helper function: selector of the type of the "Square & Multiply" (SM) algorithm preferred by the user to use in this session
+ * @brief Helper function: selector of the type of the "Square & Multiply" (SM) algorithm preferred by the user to use in this session.
  * @param base the base
  * @param exp the exponent
  * @param n the modulo element

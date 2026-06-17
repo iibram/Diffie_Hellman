@@ -7,10 +7,10 @@
 
 
 /**
- * @brief Provides a few different approaches for the "Square and Multiply" algorithm
+ * @brief Provides a few different approaches for the "Square and Multiply" algorithm.
  *
  * @author Ibrahim Ibram
- * @date 2024/2025
+ * @date 2024 (2025 refactored: added additional "Square and Multiply" variants beside the NAIVE approach)
  */
 namespace Square_n_Multiply
 {
@@ -22,7 +22,7 @@ namespace Square_n_Multiply
 	 * For production-critical hot loops, this approach was later optimized — to eliminate the string overhead — by replacing it with the bit-based
 	 * variants (`L2R` and `R2L`).
 	 *
-	 * @note This was the very first custom implementation from the early days (2024/2025).
+	 * @note This was the very first custom implementation from the early days (2024).
 	 * It precisely replicates the procedure one would use to calculate it manually on paper.
 	 *
 	 * @param base the base

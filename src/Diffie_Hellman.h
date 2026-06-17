@@ -7,21 +7,23 @@
 #include <limits>
 
 
-
+/**
+ * @brief
+ */
 constexpr uint64_t INVALID_BASE = std::numeric_limits<uint64_t>::max();
 
 
 /**
- * @brief Pre-Selection for the target "Square & Multiply" algorithm type
+ * @brief Pre-Selection for the target "Square & Multiply" algorithm type.
  */
-enum class SM_Type { L2R, R2L, NAIVE };
+enum class SM_Type : uint8_t { L2R, R2L, NAIVE };
 
 
 /**
- * Implements the "Diffie-Hellman Key Exchange" procedure for demonstration purposes
+ * Implements the "Diffie-Hellman Key Exchange" procedure for demonstration purposes.
  *
  * @author Ibrahim Ibram
- * @date 2024/2025
+ * @date 2024 (2025 refactored: added an enum class for pre selecting the desired "Square and Multiply" variant)
  */
 class Diffie_Hellman
 {
