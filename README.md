@@ -89,7 +89,9 @@ This project requires a modern C++ compiler supporting at least **C++20**.
 
 ```bash
 # Clone the repository
-git clone [https://github.com/iibram/Diffie_Hellman.git](https://github.com/iibram/Diffie_Hellman.git)
+git clone https://github.com/iibram/Diffie_Hellman.git
+
+# Change directory
 cd Diffie_Hellman
 
 # Build using g++ (compile all source files into an executable named 'main')
