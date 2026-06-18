@@ -1,8 +1,6 @@
 # Diffie-Hellman Key Exchange (Educational Demo)
 
-[![C++ Standard](https://img.shields.io/badge/C%2B%2B-20-blue.svg)](https://en.cppreference.com/w/cpp/compiler_support)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![Purpose](https://img.shields.io/badge/Purpose-Educational%20%2F%20Academic-orange.svg)]()
+![C++](https://img.shields.io/badge/C%2B%2B-20-blue.svg) ![License](https://img.shields.io/badge/License-MIT-green.svg) ![Purpose](https://img.shields.io/badge/Purpose-Educational-orange.svg) ![Category](https://img.shields.io/badge/Category-Cryptography-crimson.svg) ![OS](https://img.shields.io/badge/OS-Windows%20%26%20Linux-purple.svg)
 
 A clean, console-based demonstration of the classic **Diffie-Hellman Key Exchange**, developed during my Computer Science studies (B.Sc.).
 
@@ -12,7 +10,7 @@ This project was built to hit four birds with one stone:
 3. **Exam Prep Utility:** Creating a reliable "control unit" to double-check hand-calculated exam tasks during intense study phases.
 4. **Deep Learning:** Because nothing burns an algorithm into your brain quite like debugging its implementation.
 
-⚠️ **DISCLAIMER:** This project is strictly for **educational and demonstrative purposes**. It is *not* cryptographically secure (no large prime generation, no protection against side-channel attacks, etc.). Do not use this in production.
+> ⚠️ **DISCLAIMER:** This project is strictly for **educational and demonstrative purposes**. It is *not* cryptographically secure (no large prime generation, no protection against side-channel attacks, etc.). Do not use this in production.
 
 ---
 
@@ -20,7 +18,7 @@ This project was built to hit four birds with one stone:
 
 Looking back at my 2024 implementation with more experience, I realized my initial **Square-and-Multiply (SM)** algorithm was quite naive. In 2025, I refactored the codebase to make it more robust and modular:
 
-* **Algorithm Variants:** Added three distinct implementations of the Square-and-Multiply algorithm to compare behavioral nuances.
+* **Algorithm Variants:** Expanded the initial naive implementation by adding two industry-standard variants (Left-to-Right and Right-to-Left) of the Square-and-Multiply algorithm to compare architectural and behavioral nuances.
 * **Pre-selection Enum:** Introduced a `uint8_t`-backed `enum` allowing the user to explicitly pre-select the desired SM variant for the session directly via the configuration setup.
 * **No Over-Engineering:** Kept the explicit step-by-step method calls in `main` instead of hiding everything inside a fully automated constructor. This keeps the execution flow fully transparent and readable for students or anyone interested in the math.
 
